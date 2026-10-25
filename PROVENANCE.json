@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-anthropic-aws",
+  "version": "1.0.0",
+  "releaseID": "modular-3",
+  "source": {
+    "commit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "baseCommit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "workingTree": false,
+    "inputsSHA256": "49b802ba4a30454f78c9886ab3114537ef659ab3e6db7775479b7351f6e3f0ab"
+  },
+  "dependencies": [
+    {
+      "package": "swift-ai-core",
+      "from": "1.1.0"
+    },
+    {
+      "package": "swift-ai-anthropic",
+      "from": "1.1.0"
+    }
+  ],
+  "changes": [
+    {
+      "id": "remaining-package-extraction",
+      "notes": "Extract the existing runtime, typed settings and standalone tests from the compatibility aggregate. Preserve the reviewed npm baseline and existing capability/gap boundaries.",
+      "compatibility": "Initial independent Swift package version. Existing SwiftAISDK entry points remain in the development compatibility facade; no npm-version equivalence is implied."
+    }
+  ],
+  "canonicalDirectory": "Packages/swift-ai-anthropic-aws",
+  "upstream": [
+    {
+      "name": "@ai-sdk/anthropic-aws",
+      "reviewedVersion": "2.0.81",
+      "ledgerKind": "provider",
+      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`",
+      "reviewStatus": "imported-reviewed-with-gaps",
+      "archiveIntegrity": "sha512-4LHLK8GPMKGwYzMdM9SyHTTXIgFdifjOMtPO4jZkvVPGQYqdm3T3Mlo7HO2JsB2Letqn6zvGYq20a3Ivb98eFg==",
+      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.81",
+      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "contractFamilies": [],
+      "contractReview": "not-imported; inspect upstream declarations before extraction"
+    }
+  ],
+  "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
+  "canonicalInputs": [
+    {
+      "canonicalPath": ".github/workflows/package-check.yml",
+      "sha256": "7ff448e130f7aed96c38accdf828b6d993997ebc5317358347e9a70a649e67ca"
+    },
+    {
+      "canonicalPath": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Package.swift",
+      "sha256": "d3970dc1f0742847e1ab3c7cd38a5fbdfe55c54b61b27b818ce2b8a5f261967e"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Porting/map.json",
+      "sha256": "11164624044d839d10bbc1e67135be5136d4c7add363d93ead9cc09363577991"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/README.md",
+      "sha256": "f36514d2b8f96b1c24801aadbec099c85e4b1541aeaf1742b703402d51ca43c8"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Sources/SwiftAIAnthropicAWS/AnthropicAWSProvider.swift",
+      "sha256": "c815ba315d53b01836da99aa24db11ace52e18788ae7d648b7af874cc8b34c4c"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/AnthropicAWSProviderTests.swift",
+      "sha256": "1b589710e7414eb01659d373bf24c0ab89fb5a782f59d354fe149d1711868dd9"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/FixtureDownloadTransport.swift",
+      "sha256": "05245da546bb7a79242772ad385cf0adcf7eac3930dc6480b61c9b8f734f57ff"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/TestSupport.swift",
+      "sha256": "496f4977548c077f0c7f37dede025d658797d713b8f1c7f2212aa2edc339a650"
+    }
+  ]
+}

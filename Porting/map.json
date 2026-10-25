@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-anthropic-aws",
+  "status": "coarse-import",
+  "upstream": [
+    {
+      "name": "@ai-sdk/anthropic-aws",
+      "implementation": [
+        "packages/anthropic-aws/src"
+      ],
+      "tests": [
+        "packages/anthropic-aws/src/anthropic-aws-fetch.test.ts",
+        "packages/anthropic-aws/src/anthropic-aws-provider.test.ts",
+        "packages/anthropic-aws/src/region-validation.test.ts"
+      ]
+    }
+  ],
+  "swift": {
+    "sources": [
+      "Sources/SwiftAIAnthropicAWS/AnthropicAWSProvider.swift"
+    ],
+    "tests": [
+      "Tests/SwiftAIAnthropicAWSTests/AnthropicAWSProviderTests.swift",
+      "Tests/SwiftAIAnthropicAWSTests/FixtureDownloadTransport.swift",
+      "Tests/SwiftAIAnthropicAWSTests/TestSupport.swift"
+    ],
+    "resources": []
+  },
+  "differences": [
+    {
+      "kind": "native-adaptation",
+      "reason": "Preserve Swift async/await, Sendable, Foundation transport and existing documented gaps; see Docs/CoreV6Parity.md and PortingStatus.md."
+    }
+  ],
+  "reviewNote": "M6: provider implementation and focused tests extracted; neutral AWS signing lives in core, Anthropic behavior is shared without copies. Baselines, capabilities and known gaps remain unchanged.",
+  "canonicalOnlyReferences": [],
+  "canonicalDirectory": "Packages/swift-ai-anthropic-aws"
+}
