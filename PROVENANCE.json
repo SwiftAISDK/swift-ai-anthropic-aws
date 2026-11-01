@@ -1,45 +1,48 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-anthropic-aws",
-  "version": "1.0.0",
-  "releaseID": "modular-3",
+  "version": "1.1.0",
+  "releaseID": "weekly-upstream-20261101",
   "source": {
-    "commit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
-    "baseCommit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
     "workingTree": false,
-    "inputsSHA256": "49b802ba4a30454f78c9886ab3114537ef659ab3e6db7775479b7351f6e3f0ab"
+    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.1.0"
+      "from": "1.2.0"
     },
     {
       "package": "swift-ai-anthropic",
-      "from": "1.1.0"
+      "from": "1.2.0"
     }
   ],
   "changes": [
     {
-      "id": "remaining-package-extraction",
-      "notes": "Extract the existing runtime, typed settings and standalone tests from the compatibility aggregate. Preserve the reviewed npm baseline and existing capability/gap boundaries.",
-      "compatibility": "Initial independent Swift package version. Existing SwiftAISDK entry points remain in the development compatibility facade; no npm-version equivalence is implied."
+      "id": "weekly-upstream-20261101",
+      "notes": "Lazy apiKeyProvider callbacks use x-api-key instead of SigV4, rotate each HTTP call and reject blank results before network while preserving nonblank whitespace. Reviewed upstream: @ai-sdk/anthropic-aws 2.0.81 to 2.0.87. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
+      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-anthropic-aws",
   "upstream": [
     {
       "name": "@ai-sdk/anthropic-aws",
-      "reviewedVersion": "2.0.81",
+      "reviewedVersion": "2.0.87",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`",
+      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-4LHLK8GPMKGwYzMdM9SyHTTXIgFdifjOMtPO4jZkvVPGQYqdm3T3Mlo7HO2JsB2Letqn6zvGYq20a3Ivb98eFg==",
-      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.81",
-      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
-      "testRefRelationship": "inventory-snapshot-not-release-verified",
-      "contractFamilies": [],
-      "contractReview": "not-imported; inspect upstream declarations before extraction"
+      "archiveIntegrity": "sha512-ZYEE2z/yAw5odMDBPbgk0GkDf7DBzzaVRlWHncZs2HafDzhHgrVFsBJpKnZ+1ScejONwCMYKBvrCdHGHnEnU8Q==",
+      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.87",
+      "testRef": "028a025398782f4938303f48fbeee45c79af544b",
+      "testRefRelationship": "matching-release",
+      "contractFamilies": [
+        "LanguageModelV4",
+        "ProviderV4"
+      ],
+      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -58,7 +61,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Porting/map.json",
-      "sha256": "11164624044d839d10bbc1e67135be5136d4c7add363d93ead9cc09363577991"
+      "sha256": "052effe01c76255f42fce95c8e9ec2685f1eb69a0b45445d37b62f18bc5da421"
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/README.md",
@@ -66,11 +69,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Sources/SwiftAIAnthropicAWS/AnthropicAWSProvider.swift",
-      "sha256": "c815ba315d53b01836da99aa24db11ace52e18788ae7d648b7af874cc8b34c4c"
+      "sha256": "698187b79925c8790aa485216ae13cf0d5c872c091a6ef7f5945017cc9243403"
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/AnthropicAWSProviderTests.swift",
-      "sha256": "1b589710e7414eb01659d373bf24c0ab89fb5a782f59d354fe149d1711868dd9"
+      "sha256": "a2b093652f6ec9328fa71b16d5931326b75787d2c3f2f53f5cb0e1df30d3c25f"
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/FixtureDownloadTransport.swift",
@@ -79,6 +82,10 @@
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/TestSupport.swift",
       "sha256": "496f4977548c077f0c7f37dede025d658797d713b8f1c7f2212aa2edc339a650"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/Weekly20261101AuthTests.swift",
+      "sha256": "832d3eeaa2764f76fb145c50dde606dc10f88e152cdbc84af2b1b593619d2687"
     }
   ]
 }
