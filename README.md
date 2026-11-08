@@ -1,5 +1,5 @@
 <!-- Generated distribution; edit the canonical repository. -->
-# swift-ai-anthropic-aws 1.1.0
+# swift-ai-anthropic-aws 1.2.0
 
 Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions are in PROVENANCE.json and Porting/.
 
@@ -8,7 +8,7 @@ Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions
 Add this package to your SwiftPM dependencies:
 
 ```swift
-.package(url: "https://github.com/SwiftAISDK/swift-ai-anthropic-aws.git", from: "1.1.0")
+.package(url: "https://github.com/SwiftAISDK/swift-ai-anthropic-aws.git", from: "1.2.0")
 ```
 
 Products: `SwiftAIAnthropicAWS`.
@@ -26,3 +26,9 @@ Existing baselines and documented port gaps remain unchanged. See the canonical
 provider guide and `Porting/map.json`.
 
 See [provider usage and capabilities](https://github.com/SwiftAISDK/SwiftAISDK/blob/main/docs-site/scripts/provider-guides/anthropic-aws.md) for authentication, options and supported surfaces.
+
+Claude Platform on AWS supports Anthropic message threads through the canonical
+`providerOptions.anthropic.thread` create/continue objects. AWS authentication and
+workspace headers remain provider settings; keep full conversation history locally
+for thread-expiry recovery. Bedrock InvokeModel is a separate hosting surface and
+does not enable message threads.
