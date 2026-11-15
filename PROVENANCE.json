@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-anthropic-aws",
-  "version": "1.2.1",
-  "releaseID": "weekly-upstream-20261114",
+  "version": "1.2.2",
+  "releaseID": "weekly-upstream-20261115",
   "source": {
-    "commit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
-    "baseCommit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
+    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
     "workingTree": false,
-    "inputsSHA256": "63e472c0fe891cb7636d225e1c6467e4761dc3721be68081f2afa9f0b656bb29"
+    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
   },
   "dependencies": [
     {
@@ -21,28 +21,28 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261114",
-      "notes": "Retain AWS signing and credentials while inheriting the corrected Claude Fable 5.2 forced-tool/thinking policy. Reviewed npm delta: @ai-sdk/anthropic-aws 2.0.92 to 2.0.97. Validation: `node Scripts/test-packages.mjs` passed all 52 owning suites and 1731 facade tests; tooling 27/27, generation/isolation checks, standalone exports and 106 minimum/latest consumers, documentation check and 101-page build passed. Publication requires green exact-source Swift 6.3.3 CI. Paid/live verification and full-package parity are not claimed.",
-      "compatibility": "Compatible behavior/header correction. Original public selectors are preserved. npm baselines and Swift SemVer are independent; this reviewed delta does not establish full-package or live-service parity. Required direct minimums: swift-ai-anthropic 1.3.0 to 1.4.0."
+      "id": "weekly-upstream-20261115",
+      "notes": "Align the versioned request identity with the reviewed published package while retaining native open String model IDs and existing request, response, option, error, stream and telemetry behavior. Derived TypeScript model-ID/catalog reorganizations preserve the existing native runtime policies. Reviewed npm delta: @ai-sdk/anthropic-aws 2.0.97 to 2.0.98. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
+      "compatibility": "Compatible versioned request identity correction; existing public selectors and dependency minimums remain. npm baselines and Swift SemVer are independent."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-anthropic-aws",
   "upstream": [
     {
       "name": "@ai-sdk/anthropic-aws",
-      "reviewedVersion": "2.0.97",
+      "reviewedVersion": "2.0.98",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json",
+      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-2xNpW327UbW268XaB6SgcMTIuWClCd9ghI0ly4ArMzOXXMA8dtjzbd8dXYTfozdjGyMmhtbIx/eVoFakIF1cvQ==",
-      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.97",
-      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "archiveIntegrity": "sha512-lE52+9h+pdi98t4Wwlw5UFR2DSPzvkiUCts/ZCnmY1tgizT5AlT+EW6ZL/V043V3qiY0CSWpbr+F3u2gPQ44DA==",
+      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.98",
+      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-14: verified published source/declarations and exact matching-release changed tests reviewed separately; native ports, per-file dispositions and retained gaps are recorded in Docs/WeeklyUpstreamAudit20261114.json. Delta review is not full-package or live-service parity."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -61,7 +61,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Porting/map.json",
-      "sha256": "a0399a9a44c1e41f62bee8903eb264dc73883fe61910c70b3c9820a8568e7fbd"
+      "sha256": "1a7fe4dbaf9e4e78d82bd9285a5fe135ab6971c29e650b6eb9514aad25e3c07d"
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/README.md",
@@ -69,11 +69,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Sources/SwiftAIAnthropicAWS/AnthropicAWSProvider.swift",
-      "sha256": "632b35e54286c0acba97f36863769a1e79260e71602dfc3ae446d25c04a46b93"
+      "sha256": "247cdc5576beebcc21cbcf8b7c7ea47b5e9cebde4fb2e7207bf03ab17239f8b2"
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/AnthropicAWSProviderTests.swift",
-      "sha256": "766c3b80cc9772e4630a425e7d3a9d6521eae26e5557f2353e0b992aa6d9f6a5"
+      "sha256": "3d8ad93fb568cb6463aaae830141d2d8ca7d6af5c3daccd106c1b7bb379ada4a"
     },
     {
       "canonicalPath": "Packages/swift-ai-anthropic-aws/Tests/SwiftAIAnthropicAWSTests/FixtureDownloadTransport.swift",

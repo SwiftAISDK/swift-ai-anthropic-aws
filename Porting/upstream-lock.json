@@ -3,19 +3,19 @@
   "packages": [
     {
       "name": "@ai-sdk/anthropic-aws",
-      "reviewedVersion": "2.0.97",
+      "reviewedVersion": "2.0.98",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json",
+      "evidence": "`AIProviders.anthropicAWS`, `AnthropicAWSProvider`, `AnthropicTests.swift`, `AnthropicBedrockUpstream202609Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-2xNpW327UbW268XaB6SgcMTIuWClCd9ghI0ly4ArMzOXXMA8dtjzbd8dXYTfozdjGyMmhtbIx/eVoFakIF1cvQ==",
-      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.97",
-      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "archiveIntegrity": "sha512-lE52+9h+pdi98t4Wwlw5UFR2DSPzvkiUCts/ZCnmY1tgizT5AlT+EW6ZL/V043V3qiY0CSWpbr+F3u2gPQ44DA==",
+      "sourceRef": "npm:@ai-sdk/anthropic-aws@2.0.98",
+      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-14: verified published source/declarations and exact matching-release changed tests reviewed separately; native ports, per-file dispositions and retained gaps are recorded in Docs/WeeklyUpstreamAudit20261114.json. Delta review is not full-package or live-service parity."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ]
 }
