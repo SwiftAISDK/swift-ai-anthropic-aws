@@ -2,6 +2,7 @@
   {
     "order": 5,
     "providerID": "anthropic-aws",
+    "displayName": "Claude Platform on AWS",
     "upstreamPackage": "@ai-sdk/anthropic-aws",
     "factoryNames": [
       "AIProviders.anthropicAWS"
@@ -11,6 +12,36 @@
     ],
     "files": true,
     "skills": true,
-    "notes": "Anthropic AWS mirrors upstream 2.0.98 request signing, regional endpoint handling, and the shared Anthropic Messages behavior represented by the Swift provider. JavaScript AWS credential-provider hooks remain runtime-specific. The 2.0.41 pass inherits the shared Anthropic 4.0.49 system-option, thinking, model-recognition, and beta-header behavior through AWS signing. The 2026-09-27 delta is version-identity-only and continues to inherit shared Anthropic behavior. Generated-host regions are validated as complete single DNS labels; custom endpoints bypass unused region validation. The 2026-10-11 pass: Inherits current Messages/Haiku behavior; non-ASCII headers remain outgoing but are excluded from SigV4 signing. The 2026-10-18 pass: Shared Messages citation, thinking/tool-choice and tool-result file-reference behavior follows the current Anthropic adapter, including the native AWS provider-reference namespace. The 2026-11-01 reviewed delta adds native per-request async credentials and current portable request/stream fixes where applicable; see WeeklyUpstreamAudit20261101 for exact package dispositions and retained gaps. The 2026-11-08 reviewed delta and retained gaps are documented in WeeklyUpstreamAudit20261108; no full-package or live-service parity is implied. The 2026-11-14 reviewed delta and retained gaps are documented in WeeklyUpstreamAudit20261114; no full-package or live-service parity is implied. The 2026-11-15 delta and native/platform distinctions are recorded in WeeklyUpstreamAudit20261115; no full-package or live-service parity is implied."
+    "credentials": [
+      {
+        "env": "ANTHROPIC_AWS_WORKSPACE_ID",
+        "description": "Workspace ID sent as `anthropic-workspace-id`. Required unless `workspaceID` is set in settings."
+      },
+      {
+        "env": "AWS_REGION",
+        "description": "AWS region used for the endpoint host and SigV4 signing. Required unless `region` or `baseURL` is set."
+      },
+      {
+        "env": "AWS_DEFAULT_REGION",
+        "description": "Fallback region, read when `AWS_REGION` is not set."
+      },
+      {
+        "env": "ANTHROPIC_AWS_API_KEY",
+        "description": "API key sent as `x-api-key`. When present, it is used instead of SigV4 signing."
+      },
+      {
+        "env": "AWS_ACCESS_KEY_ID",
+        "description": "Access key for SigV4 signing when no API key or credential provider is configured."
+      },
+      {
+        "env": "AWS_SECRET_ACCESS_KEY",
+        "description": "Secret key for SigV4 signing when no API key or credential provider is configured."
+      },
+      {
+        "env": "AWS_SESSION_TOKEN",
+        "description": "Optional session token for temporary SigV4 credentials."
+      }
+    ],
+    "notes": "Claude models through Anthropic's Claude Platform on AWS, authenticated with an Anthropic AWS API key or AWS SigV4 credentials and scoped to a workspace. It uses the same Messages adapter as the Anthropic provider, including message threads, files and skills."
   }
 ]

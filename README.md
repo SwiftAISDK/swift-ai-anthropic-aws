@@ -1,5 +1,5 @@
 <!-- Generated distribution; edit the canonical repository. -->
-# swift-ai-anthropic-aws 1.2.2
+# swift-ai-anthropic-aws 1.3.0
 
 Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions are in PROVENANCE.json and Porting/.
 
@@ -8,7 +8,7 @@ Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions
 Add this package to your SwiftPM dependencies:
 
 ```swift
-.package(url: "https://github.com/SwiftAISDK/swift-ai-anthropic-aws.git", from: "1.2.2")
+.package(url: "https://github.com/SwiftAISDK/swift-ai-anthropic-aws.git", from: "1.3.0")
 ```
 
 Products: `SwiftAIAnthropicAWS`.
@@ -16,19 +16,29 @@ Contribute and report issues in the canonical SwiftAISDK repository.
 
 ## Authored usage guide
 
-# SwiftAIAnthropicAWS
+# Claude Platform on AWS for Swift
 
-Swift-native port of `@ai-sdk/anthropic-aws`. Maintained in the canonical SwiftAISDK repository and exported as an independent Swift package.
-Sources are owned by the canonical repository, with shared HTTP/SigV4 machinery
-in core and Anthropic wire behavior in the Anthropic package.
+`SwiftAIAnthropicAWS` adds Claude Platform on AWS to [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK), an independent Swift port of the Vercel AI SDK. It ports `@ai-sdk/anthropic-aws` and supports text generation, provider files and skills.
 
-Existing baselines and documented port gaps remain unchanged. See the canonical
-provider guide and `Porting/map.json`.
+Provider guide with models, options, streaming and errors:
 
-See [provider usage and capabilities](https://github.com/SwiftAISDK/SwiftAISDK/blob/main/docs-site/scripts/provider-guides/anthropic-aws.md) for authentication, options and supported surfaces.
+- [Claude Platform on AWS](https://swiftaisdk.github.io/SwiftAISDK/providers/anthropic-aws/)
 
-Claude Platform on AWS supports Anthropic message threads through the canonical
-`providerOptions.anthropic.thread` create/continue objects. AWS authentication and
-workspace headers remain provider settings; keep full conversation history locally
-for thread-expiry recovery. Bedrock InvokeModel is a separate hosting surface and
-does not enable message threads.
+## Usage
+
+Add the `SwiftAI` product from `swift-ai-core` and the `SwiftAIAnthropicAWS` product from this package to your target, then create the provider:
+
+```swift
+import SwiftAI
+import SwiftAIAnthropicAWS
+
+let provider = try AIProviders.anthropicAWS(configuration: AnthropicAWSProviderSettings())
+```
+
+By default the provider reads `ANTHROPIC_AWS_WORKSPACE_ID`, `AWS_REGION`, `AWS_DEFAULT_REGION`, `ANTHROPIC_AWS_API_KEY`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN` from the environment; values set in `AnthropicAWSProviderSettings` take precedence.
+
+To use every provider through one dependency, add the complete [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK) package instead; see [Install](https://swiftaisdk.github.io/SwiftAISDK/getting-started/install/).
+
+## Contributing
+
+This package is exported from `Packages/swift-ai-anthropic-aws` in the canonical [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK) repository. Open issues and pull requests there.
